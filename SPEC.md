@@ -23,7 +23,6 @@ You may also define a range with the format `start..=end`. The bound will instea
 You can also construct an array via the use of ranges:
 
 ```
-[0..10 | even]
 [0..10 | even] 
 [0..10 | x -> even x]
 ```
@@ -38,13 +37,12 @@ Every line that starts with `--` is treated as a comment.
 ```
 
 ## The PIPE symbol
-The PIPE (`|`) is used for most of the operations in Piper. <br>\
-You can for example use it in type conversions or passing arguments to functions:
+The PIPE (`|`) is used for  function calls in Piper. It calls a function on the right-hand side with the first argument being the value on the left-hand side: <br>
 ```
 12345 | str | out
 ```
 
-The preceding example first turns `12345` into a string `"12345"`, and then prints it to stdout.
+where `12345` is first turned to a string `"12345"`, and then printed to stdout.
 
 You can also use the PIPE symbol followed by a `>` for iterating over arrays:
 
