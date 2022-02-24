@@ -23,8 +23,9 @@ You may also define a range with the format `start..=end`. The bound will instea
 You can also construct an array via the use of ranges:
 
 ```
-[x in 0..10 | even] 
-[x in 0..10 | x -> even x]
+[0..10 | even]
+[0..10 | even] 
+[0..10 | x -> even x]
 ```
 
 where both return `[0 2 4 6 8]`.
@@ -45,18 +46,18 @@ You can for example use it in type conversions or passing arguments to functions
 
 The preceding example first turns `12345` into a string `"12345"`, and then prints it to stdout.
 
-You can also use the PIPE for things such as mapping arrays:
+You can also use the PIPE symbol followed by a `>` for iterating over arrays:
 
 ```
 -- Will print "2 4 6 8 10" to stdout.
-[1 2 3 4 5] | *2 | join " " | out
+[1 2 3 4 5] |> *2 | join " " | out
 ```
 
 You can use the `->` operator to bind values to variables in appropriate contexts:
 
 ```
 -- Will also print "2 4 6 8 10" to stdout.
-[1 2 3 4 5] | x -> x * 2 | join " " | out
+[1 2 3 4 5] |> x -> x * 2 | join " " | out
 ```
 
 The validity of a PIPE operation depends on the context it's used in.<br>
