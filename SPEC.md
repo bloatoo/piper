@@ -61,9 +61,26 @@ You can use the `->` operator to bind values to variables in appropriate context
 The validity of a PIPE operation depends on the context it's used in.<br>
 
 ## Variable Declaration
-???
+x = 0
 
 ## Loops
-???
+[1..10] |> x -> x
 
+## Grammar
 
+BinaryOperator  ::= '+' | '-' | '*' | '/' | '^' | '%'
+Number          ::= ('-' | '+')? (NumberLiteral | Identifier)
+Expression      ::= Number (BinaryOperator Number)*
+
+### Tokens
+
+Identifier      ::=   [a-z] [a-zA-Z0-9]*
+OpenBracket     ::=   '['
+CloseBracket    ::=   ']'
+Pipe            ::=   '|'
+Diamond         ::=   '|>'
+Arrow           ::=   '->'
+Range           ::=   '..'
+StringLiteral   ::=   '"' [^"]* '"'
+NumberLiteral   ::=   \d+
+Unit            ::=   '()'
