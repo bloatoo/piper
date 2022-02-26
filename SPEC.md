@@ -55,7 +55,7 @@ Indexing an array is done with the ! operator:
 [0..10] | x -> out x!-1 
 
 -- Prints the third last element, "7", to stdout.
-[0..10] | x-> out x!-3
+[0..10] | x -> out x!-3
 ```
 
 NOTE: indexing is zero-based.
